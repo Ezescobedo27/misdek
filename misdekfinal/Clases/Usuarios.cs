@@ -21,6 +21,8 @@ namespace misdekfinal.Clases
             public string ApellidoMaterno { get; set; }
             public string Escuela { get; set; }
             public string Telefono { get; set; }
+            public string Puesto { get; set; }
+
         }
 
 
@@ -68,7 +70,7 @@ namespace misdekfinal.Clases
             Usuario usuario = new Usuario();
 
             // Realiza una consulta a la base de datos para obtener la información del usuario
-            string consulta = "SELECT nombre, apellido_paterno, apellido_materno, escuela, telefono FROM usuarios WHERE correo = @correo";
+            string consulta = "SELECT nombre, apellido_paterno, apellido_materno, escuela, telefono, puesto FROM usuarios WHERE correo = @correo";
 
             using (NpgsqlCommand cmd = new NpgsqlCommand(consulta, conex))
             {
@@ -81,6 +83,8 @@ namespace misdekfinal.Clases
                         usuario.Nombre = reader["nombre"].ToString();
                         usuario.Escuela = reader["escuela"].ToString();
                         usuario.Telefono = reader["telefono"].ToString();
+                        usuario.Puesto = reader["puesto"].ToString();
+
                     }
                 }
             }

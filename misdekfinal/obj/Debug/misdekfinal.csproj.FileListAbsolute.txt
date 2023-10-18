@@ -40,3 +40,7 @@ C:\Users\ezesc\source\repos\misdekfinal\misdekfinal\obj\Debug\misdekfinal.exe
 C:\Users\ezesc\source\repos\misdekfinal\misdekfinal\obj\Debug\misdekfinal.pdb
 C:\Users\ezesc\source\repos\misdekfinal\misdekfinal\obj\Debug\misdekfinal.Autenticacion.resources
 C:\Users\ezesc\source\repos\misdekfinal\misdekfinal\obj\Debug\misdekfinal.Perfil.resources
+C:\Users\ezesc\source\repos\misdekfinal\misdekfinal\bin\Debug\FontAwesome.Sharp.dll
+C:\Users\ezesc\source\repos\misdekfinal\misdekfinal\obj\Debug\misdekfinal.Inicio.resources
+C:\Users\ezesc\source\repos\misdekfinal\misdekfinal\obj\Debug\misdekfinal.Notas.resources
+C:\Users\ezesc\source\repos\misdekfinal\misdekfinal\obj\Debug\misdekfinal.Tareas.resources

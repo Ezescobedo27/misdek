@@ -33,7 +33,7 @@ namespace misdekfinal
             if (inicioSesionExitoso)
             {
                 labelError.Text = "";
-                labelExitoso.Text = "Inicio de Sesión Exitoso, Redirigiendo al Perfil...";
+                labelExitoso.Text = "Inicio de Sesión Exitoso, Redirigiendo...";
 
                 // Configurar un Timer para redirigir después de 2 segundos
                 Timer timer = new Timer();
@@ -49,6 +49,7 @@ namespace misdekfinal
                     perfil.Nombre = usuario.Nombre;
                     perfil.Escuela = usuario.Escuela;
                     perfil.Telefono = usuario.Telefono;
+                    perfil.Puesto = usuario.Puesto;
                     perfil.Show();
                     this.Hide(); // Ocultar el formulario de inicio de sesión
                 };

@@ -30,6 +30,11 @@ namespace misdekfinal
             get { return labelTelefono.Text; }
             set { labelTelefono.Text = value; }
         }
+        public string Puesto
+        {
+            get { return labelPuesto.Text; }
+            set { labelPuesto.Text = value; }
+        }
 
 
 
@@ -63,6 +68,63 @@ namespace misdekfinal
             Process.Start(new ProcessStartInfo(mailtoUrl));
 
             e.Link.Visited = true;
+        }
+
+        private void linkInicio_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Inicio inicio = new Inicio();
+
+            // Mostrar el formulario de destino
+            inicio.Show();
+
+            this.Close(); // Cerrar el formulario actual
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+           
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void linkNotas_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Notas notas = new Notas();
+
+            // Mostrar el formulario de destino
+            notas.Show();
+
+            this.Close(); // Cerrar el formulario actual
+        }
+
+        private void linkTareas_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Tareas tareas = new Tareas();
+
+            // Mostrar el formulario de destino
+            tareas.Show();
+
+            this.Close(); // Cerrar el formulario actual
+
+        }
+
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
