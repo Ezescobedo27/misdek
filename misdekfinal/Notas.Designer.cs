@@ -212,6 +212,7 @@
             this.textBoxNombre.Name = "textBoxNombre";
             this.textBoxNombre.Size = new System.Drawing.Size(184, 20);
             this.textBoxNombre.TabIndex = 21;
+            this.textBoxNombre.TextChanged += new System.EventHandler(this.textBoxNombre_TextChanged);
             // 
             // labelTarea
             // 
@@ -253,6 +254,7 @@
             this.buttonCrearNota.TabIndex = 31;
             this.buttonCrearNota.Text = "Crear";
             this.buttonCrearNota.UseVisualStyleBackColor = false;
+            this.buttonCrearNota.Click += new System.EventHandler(this.buttonCrearNota_Click);
             // 
             // label2
             // 
@@ -266,10 +268,15 @@
             // comboBoxSeccion
             // 
             this.comboBoxSeccion.FormattingEnabled = true;
+            this.comboBoxSeccion.Items.AddRange(new object[] {
+            "Personal",
+            "Privado",
+            "Grupal"});
             this.comboBoxSeccion.Location = new System.Drawing.Point(206, 146);
             this.comboBoxSeccion.Name = "comboBoxSeccion";
             this.comboBoxSeccion.Size = new System.Drawing.Size(184, 21);
             this.comboBoxSeccion.TabIndex = 34;
+            this.comboBoxSeccion.SelectedIndexChanged += new System.EventHandler(this.comboBoxSeccion_SelectedIndexChanged);
             // 
             // comboBoxAutor
             // 
@@ -278,6 +285,7 @@
             this.comboBoxAutor.Name = "comboBoxAutor";
             this.comboBoxAutor.Size = new System.Drawing.Size(184, 21);
             this.comboBoxAutor.TabIndex = 35;
+            this.comboBoxAutor.SelectedIndexChanged += new System.EventHandler(this.comboBoxAutor_SelectedIndexChanged);
             // 
             // dataGridViewNotas
             // 
@@ -286,6 +294,7 @@
             this.dataGridViewNotas.Name = "dataGridViewNotas";
             this.dataGridViewNotas.Size = new System.Drawing.Size(624, 236);
             this.dataGridViewNotas.TabIndex = 36;
+            this.dataGridViewNotas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewNotas_CellContentClick);
             // 
             // Notas
             // 

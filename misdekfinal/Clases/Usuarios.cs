@@ -66,6 +66,38 @@ namespace misdekfinal.Clases
             }
         }
 
+        public void ActualizarDataGridViewNotas(DataGridView dataGridView)
+        {
+            try
+            {
+                conex.ConnectionString = cadenaConexion;
+                conex.Open();
+
+                // Consulta SQL para obtener todas las tareas
+                string sql = "SELECT id_nota, autor, nombre, descripcion, seccion FROM notas";
+
+                using (NpgsqlCommand cmd = new NpgsqlCommand(sql, conex))
+                {
+                    using (NpgsqlDataAdapter adapter = new NpgsqlDataAdapter(cmd))
+                    {
+                        System.Data.DataTable dt = new System.Data.DataTable();
+                        adapter.Fill(dt);
+
+                        // Asigna el DataTable al DataSource del DataGridView
+                        dataGridView.DataSource = dt;
+                    }
+                }
+            }
+            catch (NpgsqlException ex)
+            {
+                MessageBox.Show("Error al obtener las tareas: " + ex.Message);
+            }
+            finally
+            {
+                conex.Close();
+            }
+        }
+
 
         private bool conexionValida()
         {
@@ -121,6 +153,43 @@ namespace misdekfinal.Clases
             return nombresUsuarios;
         }
 
+
+        public List<string> ObtenerNombresSecciones()
+        {
+            List<string> nombresSecciones = new List<string>();
+
+            try
+            {
+                conex.ConnectionString = cadenaConexion;
+                conex.Open();
+
+                string sql = "SELECT * FROM secciones";
+
+                using (NpgsqlCommand cmd = new NpgsqlCommand(sql, conex))
+                {
+                    using (NpgsqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            string nombreCompleto = $"{reader["nombre"]}";
+                            nombresSecciones.Add(nombreCompleto);
+                        }
+                    }
+                }
+            }
+            catch (NpgsqlException ex)
+            {
+                MessageBox.Show("Error al obtener los nombres de secciones: " + ex.Message);
+            }
+            finally
+            {
+                conex.Close();
+            }
+
+            return nombresSecciones;
+        }
+
+
         public void CrearTarea(string nombreAutor, string nombreTarea, string descripcionTarea)
         {
             try
@@ -148,6 +217,36 @@ namespace misdekfinal.Clases
                 conex.Close();
             }
         }
+
+        public void CrearNota(string nombreAutor, string nombreTarea, string descripcionTarea, string seccion)
+        {
+            try
+            {
+                conex.ConnectionString = cadenaConexion;
+                conex.Open();
+
+                string sql = "INSERT INTO notas (autor, nombre, descripcion, seccion) VALUES (@autor, @nombreTarea, @descripcionTarea, @seccion)";
+
+                using (NpgsqlCommand cmd = new NpgsqlCommand(sql, conex))
+                {
+                    cmd.Parameters.AddWithValue("@autor", nombreAutor);
+                    cmd.Parameters.AddWithValue("@nombreTarea", nombreTarea);
+                    cmd.Parameters.AddWithValue("@descripcionTarea", descripcionTarea);
+                    cmd.Parameters.AddWithValue("@seccion", seccion);
+
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            catch (NpgsqlException ex)
+            {
+                MessageBox.Show("Error al crear la nota: " + ex.Message);
+            }
+            finally
+            {
+                conex.Close();
+            }
+        }
+
 
         public bool ValidarCredenciales(string correo, string contrasena)
         {

@@ -41,6 +41,9 @@
             this.labelEscuela = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.iconButton3 = new FontAwesome.Sharp.IconButton();
+            this.linkNotas = new System.Windows.Forms.LinkLabel();
             this.label7 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.iconButton2 = new FontAwesome.Sharp.IconButton();
@@ -49,14 +52,11 @@
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.linkInicio = new System.Windows.Forms.LinkLabel();
             this.label8 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.iconButton3 = new FontAwesome.Sharp.IconButton();
-            this.linkNotas = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelNombre
@@ -151,6 +151,7 @@
             this.button1.TabIndex = 12;
             this.button1.Text = "Subir";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // labelEscuela
             // 
@@ -185,6 +186,46 @@
             this.panel1.Size = new System.Drawing.Size(150, 551);
             this.panel1.TabIndex = 56;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint_1);
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.DodgerBlue;
+            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel4.Controls.Add(this.iconButton3);
+            this.panel4.Controls.Add(this.linkNotas);
+            this.panel4.Location = new System.Drawing.Point(16, 190);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(117, 43);
+            this.panel4.TabIndex = 22;
+            // 
+            // iconButton3
+            // 
+            this.iconButton3.BackColor = System.Drawing.Color.Transparent;
+            this.iconButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton3.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.iconButton3.IconChar = FontAwesome.Sharp.IconChar.Pen;
+            this.iconButton3.IconColor = System.Drawing.Color.Black;
+            this.iconButton3.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.iconButton3.IconSize = 30;
+            this.iconButton3.Location = new System.Drawing.Point(12, 4);
+            this.iconButton3.Name = "iconButton3";
+            this.iconButton3.Size = new System.Drawing.Size(45, 36);
+            this.iconButton3.TabIndex = 17;
+            this.iconButton3.UseVisualStyleBackColor = false;
+            // 
+            // linkNotas
+            // 
+            this.linkNotas.AutoSize = true;
+            this.linkNotas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkNotas.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+            this.linkNotas.LinkColor = System.Drawing.Color.White;
+            this.linkNotas.Location = new System.Drawing.Point(61, 13);
+            this.linkNotas.Name = "linkNotas";
+            this.linkNotas.Size = new System.Drawing.Size(51, 20);
+            this.linkNotas.TabIndex = 17;
+            this.linkNotas.TabStop = true;
+            this.linkNotas.Text = "Notas";
+            this.linkNotas.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkNotas_LinkClicked_1);
             // 
             // label7
             // 
@@ -290,46 +331,6 @@
             this.label8.TabIndex = 0;
             this.label8.Text = "Misdek";
             // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.DodgerBlue;
-            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel4.Controls.Add(this.iconButton3);
-            this.panel4.Controls.Add(this.linkNotas);
-            this.panel4.Location = new System.Drawing.Point(16, 190);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(117, 43);
-            this.panel4.TabIndex = 22;
-            // 
-            // iconButton3
-            // 
-            this.iconButton3.BackColor = System.Drawing.Color.Transparent;
-            this.iconButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton3.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.iconButton3.IconChar = FontAwesome.Sharp.IconChar.Pen;
-            this.iconButton3.IconColor = System.Drawing.Color.Black;
-            this.iconButton3.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.iconButton3.IconSize = 30;
-            this.iconButton3.Location = new System.Drawing.Point(12, 4);
-            this.iconButton3.Name = "iconButton3";
-            this.iconButton3.Size = new System.Drawing.Size(45, 36);
-            this.iconButton3.TabIndex = 17;
-            this.iconButton3.UseVisualStyleBackColor = false;
-            // 
-            // linkNotas
-            // 
-            this.linkNotas.AutoSize = true;
-            this.linkNotas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkNotas.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
-            this.linkNotas.LinkColor = System.Drawing.Color.White;
-            this.linkNotas.Location = new System.Drawing.Point(61, 13);
-            this.linkNotas.Name = "linkNotas";
-            this.linkNotas.Size = new System.Drawing.Size(51, 20);
-            this.linkNotas.TabIndex = 17;
-            this.linkNotas.TabStop = true;
-            this.linkNotas.Text = "Notas";
-            this.linkNotas.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkNotas_LinkClicked_1);
-            // 
             // Perfil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -356,12 +357,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

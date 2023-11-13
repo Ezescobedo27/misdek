@@ -171,5 +171,16 @@ namespace misdekfinal
 
             this.Close(); // Cerrar el formulario actual
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog archivo = new OpenFileDialog();
+            archivo.Filter = "archivos de imagenes(*.png,*.jpg) | *.png; *jpg";
+
+            if(archivo.ShowDialog() == DialogResult.OK)
+            {
+                pictureBox1.Image = Image.FromFile(archivo.FileName);
+            }
+        }
     }
 }
