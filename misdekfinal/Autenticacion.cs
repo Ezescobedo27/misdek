@@ -12,6 +12,9 @@ namespace misdekfinal
 {
     public partial class Autenticacion : Form
     {
+        private Clases.Usuarios.Usuario usuarioAutenticado;
+
+
         public Autenticacion()
         {
             InitializeComponent();
@@ -43,6 +46,7 @@ namespace misdekfinal
                     timer.Stop(); // Detener el Timer
                     timer.Dispose(); // Liberar recursos
                     Clases.Usuarios.Usuario usuario = usuarios.ObtenerInformacionUsuario(correo);
+                    usuarioAutenticado = usuarios.ObtenerInformacionUsuario(correo);
 
                     // Abrir el formulario "Perfil" y pasar los datos del usuario
                     Perfil perfil = new Perfil();
@@ -101,5 +105,6 @@ namespace misdekfinal
         {
             this.Close();
         }
+      
     }
 }

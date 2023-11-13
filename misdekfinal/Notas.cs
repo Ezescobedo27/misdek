@@ -46,5 +46,10 @@ namespace misdekfinal
 
             this.Close(); // Cerrar el formulario actual
         }
+
+        private void Notas_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

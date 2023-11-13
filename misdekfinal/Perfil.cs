@@ -126,5 +126,50 @@ namespace misdekfinal
         {
 
         }
+
+        private void panel1_Paint_1(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint_1(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void iconButton1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void linkInicio_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Inicio inicio = new Inicio();
+
+            // Mostrar el formulario de destino
+            inicio.Show();
+
+            this.Close(); // Cerrar el formulario actual
+        }
+
+        private void linkTareas_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Tareas tareas = new Tareas();
+
+            // Mostrar el formulario de destino
+            tareas.Show();
+
+            this.Close(); // Cerrar el formulario actual
+        }
+
+        private void linkNotas_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Notas notas = new Notas();
+
+            // Mostrar el formulario de destino
+            notas.Show();
+
+            this.Close(); // Cerrar el formulario actual
+        }
     }
 }

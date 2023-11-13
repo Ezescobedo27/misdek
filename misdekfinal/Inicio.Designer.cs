@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.iconButton3 = new FontAwesome.Sharp.IconButton();
             this.linkNotas = new System.Windows.Forms.LinkLabel();
@@ -36,10 +37,6 @@
             this.iconButton2 = new FontAwesome.Sharp.IconButton();
             this.linkTareas = new System.Windows.Forms.LinkLabel();
             this.label5 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
-            this.linkPerfil = new System.Windows.Forms.LinkLabel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -50,13 +47,11 @@
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.DarkBlue;
-            this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.panel3);
@@ -65,6 +60,18 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(150, 491);
             this.panel1.TabIndex = 8;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.label7.Location = new System.Drawing.Point(3, 474);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(138, 12);
+            this.label7.TabIndex = 21;
+            this.label7.Text = "Derechos Reservados ©Misdek";
             // 
             // panel4
             // 
@@ -155,58 +162,6 @@
             this.label5.Size = new System.Drawing.Size(115, 36);
             this.label5.TabIndex = 0;
             this.label5.Text = "Misdek";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label7.Location = new System.Drawing.Point(3, 474);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(138, 12);
-            this.label7.TabIndex = 21;
-            this.label7.Text = "Derechos Reservados ©Misdek";
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.DodgerBlue;
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel2.Controls.Add(this.iconButton1);
-            this.panel2.Controls.Add(this.linkPerfil);
-            this.panel2.Location = new System.Drawing.Point(16, 196);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(117, 43);
-            this.panel2.TabIndex = 20;
-            // 
-            // iconButton1
-            // 
-            this.iconButton1.BackColor = System.Drawing.Color.Transparent;
-            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton1.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.User;
-            this.iconButton1.IconColor = System.Drawing.Color.Black;
-            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.iconButton1.IconSize = 30;
-            this.iconButton1.Location = new System.Drawing.Point(12, 4);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(45, 36);
-            this.iconButton1.TabIndex = 17;
-            this.iconButton1.UseVisualStyleBackColor = false;
-            // 
-            // linkPerfil
-            // 
-            this.linkPerfil.AutoSize = true;
-            this.linkPerfil.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkPerfil.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
-            this.linkPerfil.LinkColor = System.Drawing.Color.White;
-            this.linkPerfil.Location = new System.Drawing.Point(61, 13);
-            this.linkPerfil.Name = "linkPerfil";
-            this.linkPerfil.Size = new System.Drawing.Size(44, 20);
-            this.linkPerfil.TabIndex = 17;
-            this.linkPerfil.TabStop = true;
-            this.linkPerfil.Text = "Perfil";
-            this.linkPerfil.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkPerfil_LinkClicked);
             // 
             // label1
             // 
@@ -308,14 +263,13 @@
             this.MaximizeBox = false;
             this.Name = "Inicio";
             this.Text = "Inicio";
+            this.Load += new System.EventHandler(this.Inicio_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -331,9 +285,6 @@
         private System.Windows.Forms.LinkLabel linkTareas;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Panel panel2;
-        private FontAwesome.Sharp.IconButton iconButton1;
-        private System.Windows.Forms.LinkLabel linkPerfil;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
