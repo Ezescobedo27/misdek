@@ -20,13 +20,18 @@ namespace misdekfinal
             dataGridViewTareas.AutoGenerateColumns = true;
             dataGridViewTareas.ReadOnly = true;
             dataGridViewTareas.AllowUserToAddRows = false;
+
+            DataGridViewButtonColumn eliminarColumn = new DataGridViewButtonColumn();
+            eliminarColumn.HeaderText = "Eliminar";
+            eliminarColumn.Text = "Eliminar";
+            eliminarColumn.UseColumnTextForButtonValue = true;
+            dataGridViewTareas.Columns.Add(eliminarColumn);
+
             DataGridViewButtonColumn editarColumn = new DataGridViewButtonColumn();
             editarColumn.HeaderText = "Editar";
             editarColumn.Text = "Editar";
             editarColumn.UseColumnTextForButtonValue = true;
             dataGridViewTareas.Columns.Add(editarColumn);
-
-            // Manejar el evento CellContentClick para el DataGridView
         }
 
         
@@ -55,21 +60,18 @@ namespace misdekfinal
 
         private void dataGridViewTareas_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == dataGridViewTareas.Columns["Editar"].Index && e.RowIndex >= 0)
+            if (e.RowIndex >= 0 && dataGridViewTareas.Columns[e.ColumnIndex] is DataGridViewButtonColumn && dataGridViewTareas.Columns[e.ColumnIndex].HeaderText.Equals("Eliminar"))
             {
-                // Obtener el ID de la tarea desde la fila seleccionada
                 int idTarea = Convert.ToInt32(dataGridViewTareas.Rows[e.RowIndex].Cells["id_tarea"].Value);
 
-                // Lógica para abrir el formulario de edición con el ID de la tarea seleccionada
-                // Puedes implementar esta lógica para abrir un nuevo formulario de edición con los detalles de la tarea seleccionada
-                // y permitir al usuario realizar cambios.
-                // Por ejemplo:
-                // Crear un nuevo formulario de edición pasándole el ID de la tarea seleccionada
-                FormularioEdicionTarea formularioEdicion = new FormularioEdicionTarea(idTarea);
-                formularioEdicion.ShowDialog();
+                // Lógica para eliminar la tarea con el ID obtenido
+                usuarios.EliminarTarea(idTarea); // Reemplaza esto con tu lógica de eliminación
+
+                MessageBox.Show("Tarea eliminada correctamente");
+
+                ActualizarDataGridView();
             }
         }
-
 
 
 

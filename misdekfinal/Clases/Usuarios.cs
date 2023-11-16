@@ -65,6 +65,31 @@ namespace misdekfinal.Clases
             }
         }
 
+        public void EliminarTarea(int idTarea)
+        {
+            try
+            {
+                conex.ConnectionString = cadenaConexion;
+                conex.Open();
+
+                string sql = "DELETE FROM tareas WHERE id_tarea = @idTarea";
+
+                using (NpgsqlCommand cmd = new NpgsqlCommand(sql, conex))
+                {
+                    cmd.Parameters.AddWithValue("@idTarea", idTarea);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            catch (NpgsqlException ex)
+            {
+                MessageBox.Show("Error al eliminar la tarea: " + ex.Message);
+            }
+            finally
+            {
+                conex.Close();
+            }
+        }
+
         public void ActualizarDataGridViewNotas(DataGridView dataGridView)
         {
             try
@@ -244,6 +269,7 @@ namespace misdekfinal.Clases
         }
 
 
+
         public bool ValidarCredenciales(string correo, string contrasena)
         {
             try
@@ -282,6 +308,8 @@ namespace misdekfinal.Clases
             }
 
         }
+
+
 
         public Usuario ObtenerUsuarioAutenticado()
         {
