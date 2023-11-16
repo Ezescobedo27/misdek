@@ -63,7 +63,8 @@
             // 
             this.labelNombre.AutoSize = true;
             this.labelNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNombre.Location = new System.Drawing.Point(261, 33);
+            this.labelNombre.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.labelNombre.Location = new System.Drawing.Point(331, 151);
             this.labelNombre.Name = "labelNombre";
             this.labelNombre.Size = new System.Drawing.Size(52, 15);
             this.labelNombre.TabIndex = 0;
@@ -73,7 +74,8 @@
             // 
             this.labelTelefono.AutoSize = true;
             this.labelTelefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTelefono.Location = new System.Drawing.Point(261, 78);
+            this.labelTelefono.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.labelTelefono.Location = new System.Drawing.Point(271, 216);
             this.labelTelefono.Name = "labelTelefono";
             this.labelTelefono.Size = new System.Drawing.Size(55, 15);
             this.labelTelefono.TabIndex = 3;
@@ -83,7 +85,8 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(259, 17);
+            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label1.Location = new System.Drawing.Point(349, 133);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(73, 18);
             this.label1.TabIndex = 7;
@@ -93,7 +96,8 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(259, 60);
+            this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label3.Location = new System.Drawing.Point(269, 198);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(79, 18);
             this.label3.TabIndex = 8;
@@ -105,9 +109,9 @@
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Location = new System.Drawing.Point(191, 17);
+            this.pictureBox1.Location = new System.Drawing.Point(334, 57);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(64, 49);
+            this.pictureBox1.Size = new System.Drawing.Size(94, 73);
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
             // 
@@ -127,7 +131,8 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(265, 156);
+            this.label6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label6.Location = new System.Drawing.Point(444, 198);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(66, 18);
             this.label6.TabIndex = 13;
@@ -137,7 +142,8 @@
             // 
             this.labelPuesto.AutoSize = true;
             this.labelPuesto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPuesto.Location = new System.Drawing.Point(265, 174);
+            this.labelPuesto.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.labelPuesto.Location = new System.Drawing.Point(444, 216);
             this.labelPuesto.Name = "labelPuesto";
             this.labelPuesto.Size = new System.Drawing.Size(45, 15);
             this.labelPuesto.TabIndex = 14;
@@ -145,7 +151,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(191, 72);
+            this.button1.Location = new System.Drawing.Point(352, 26);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(59, 29);
             this.button1.TabIndex = 12;
@@ -157,7 +163,8 @@
             // 
             this.labelEscuela.AutoSize = true;
             this.labelEscuela.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelEscuela.Location = new System.Drawing.Point(265, 131);
+            this.labelEscuela.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.labelEscuela.Location = new System.Drawing.Point(271, 291);
             this.labelEscuela.Name = "labelEscuela";
             this.labelEscuela.Size = new System.Drawing.Size(51, 15);
             this.labelEscuela.TabIndex = 55;
@@ -167,7 +174,8 @@
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(265, 113);
+            this.label16.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label16.Location = new System.Drawing.Point(271, 273);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(73, 18);
             this.label16.TabIndex = 54;
@@ -175,21 +183,22 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.DarkBlue;
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.label8);
-            this.panel1.Location = new System.Drawing.Point(0, 1);
+            this.panel1.Location = new System.Drawing.Point(0, -2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(150, 551);
+            this.panel1.Size = new System.Drawing.Size(150, 554);
             this.panel1.TabIndex = 56;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint_1);
             // 
             // panel4
             // 
-            this.panel4.BackColor = System.Drawing.Color.DodgerBlue;
+            this.panel4.BackColor = System.Drawing.Color.Transparent;
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel4.Controls.Add(this.iconButton3);
             this.panel4.Controls.Add(this.linkNotas);
@@ -201,15 +210,15 @@
             // iconButton3
             // 
             this.iconButton3.BackColor = System.Drawing.Color.Transparent;
-            this.iconButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.iconButton3.ForeColor = System.Drawing.Color.DodgerBlue;
             this.iconButton3.IconChar = FontAwesome.Sharp.IconChar.Pen;
-            this.iconButton3.IconColor = System.Drawing.Color.Black;
+            this.iconButton3.IconColor = System.Drawing.Color.White;
             this.iconButton3.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.iconButton3.IconSize = 30;
-            this.iconButton3.Location = new System.Drawing.Point(12, 4);
+            this.iconButton3.Location = new System.Drawing.Point(-2, -2);
             this.iconButton3.Name = "iconButton3";
-            this.iconButton3.Size = new System.Drawing.Size(45, 36);
+            this.iconButton3.Size = new System.Drawing.Size(45, 43);
             this.iconButton3.TabIndex = 17;
             this.iconButton3.UseVisualStyleBackColor = false;
             // 
@@ -219,7 +228,7 @@
             this.linkNotas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkNotas.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
             this.linkNotas.LinkColor = System.Drawing.Color.White;
-            this.linkNotas.Location = new System.Drawing.Point(61, 13);
+            this.linkNotas.Location = new System.Drawing.Point(54, 8);
             this.linkNotas.Name = "linkNotas";
             this.linkNotas.Size = new System.Drawing.Size(51, 20);
             this.linkNotas.TabIndex = 17;
@@ -232,8 +241,8 @@
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label7.Location = new System.Drawing.Point(3, 468);
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(9, 475);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(138, 12);
             this.label7.TabIndex = 21;
@@ -241,7 +250,7 @@
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.DodgerBlue;
+            this.panel3.BackColor = System.Drawing.Color.Transparent;
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel3.Controls.Add(this.iconButton2);
             this.panel3.Controls.Add(this.linkTareas);
@@ -253,15 +262,15 @@
             // iconButton2
             // 
             this.iconButton2.BackColor = System.Drawing.Color.Transparent;
-            this.iconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.iconButton2.ForeColor = System.Drawing.Color.DodgerBlue;
             this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.Book;
-            this.iconButton2.IconColor = System.Drawing.Color.Black;
+            this.iconButton2.IconColor = System.Drawing.Color.White;
             this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.iconButton2.IconSize = 30;
-            this.iconButton2.Location = new System.Drawing.Point(12, 4);
+            this.iconButton2.Location = new System.Drawing.Point(-2, -3);
             this.iconButton2.Name = "iconButton2";
-            this.iconButton2.Size = new System.Drawing.Size(45, 36);
+            this.iconButton2.Size = new System.Drawing.Size(45, 44);
             this.iconButton2.TabIndex = 16;
             this.iconButton2.UseVisualStyleBackColor = false;
             // 
@@ -271,7 +280,7 @@
             this.linkTareas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkTareas.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
             this.linkTareas.LinkColor = System.Drawing.Color.White;
-            this.linkTareas.Location = new System.Drawing.Point(54, 13);
+            this.linkTareas.Location = new System.Drawing.Point(52, 8);
             this.linkTareas.Name = "linkTareas";
             this.linkTareas.Size = new System.Drawing.Size(58, 20);
             this.linkTareas.TabIndex = 16;
@@ -281,7 +290,7 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.DodgerBlue;
+            this.panel2.BackColor = System.Drawing.Color.Transparent;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel2.Controls.Add(this.iconButton1);
             this.panel2.Controls.Add(this.linkInicio);
@@ -294,15 +303,15 @@
             // iconButton1
             // 
             this.iconButton1.BackColor = System.Drawing.Color.Transparent;
-            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.iconButton1.ForeColor = System.Drawing.Color.DodgerBlue;
             this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.House;
-            this.iconButton1.IconColor = System.Drawing.Color.Black;
+            this.iconButton1.IconColor = System.Drawing.Color.White;
             this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.iconButton1.IconSize = 30;
-            this.iconButton1.Location = new System.Drawing.Point(12, 4);
+            this.iconButton1.Location = new System.Drawing.Point(-2, -2);
             this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(45, 36);
+            this.iconButton1.Size = new System.Drawing.Size(45, 43);
             this.iconButton1.TabIndex = 15;
             this.iconButton1.UseVisualStyleBackColor = false;
             this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click_1);
@@ -313,7 +322,7 @@
             this.linkInicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkInicio.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
             this.linkInicio.LinkColor = System.Drawing.Color.White;
-            this.linkInicio.Location = new System.Drawing.Point(54, 11);
+            this.linkInicio.Location = new System.Drawing.Point(54, 8);
             this.linkInicio.Name = "linkInicio";
             this.linkInicio.Size = new System.Drawing.Size(46, 20);
             this.linkInicio.TabIndex = 15;
@@ -324,7 +333,9 @@
             // label8
             // 
             this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Matura MT Script Capitals", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.White;
             this.label8.Location = new System.Drawing.Point(18, 8);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(115, 36);
@@ -335,8 +346,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.ClientSize = new System.Drawing.Size(869, 549);
+            this.BackColor = System.Drawing.Color.RoyalBlue;
+            this.ClientSize = new System.Drawing.Size(630, 494);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.labelEscuela);
             this.Controls.Add(this.label16);

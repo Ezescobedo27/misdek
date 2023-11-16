@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Tareas));
             this.label5 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
@@ -57,7 +58,9 @@
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Matura MT Script Capitals", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(18, 7);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(115, 36);
@@ -66,10 +69,11 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.DodgerBlue;
+            this.panel2.BackColor = System.Drawing.Color.Transparent;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel2.Controls.Add(this.iconButton1);
             this.panel2.Controls.Add(this.linkInicio);
+            this.panel2.ForeColor = System.Drawing.Color.Transparent;
             this.panel2.Location = new System.Drawing.Point(16, 56);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(117, 43);
@@ -79,14 +83,14 @@
             // 
             this.iconButton1.BackColor = System.Drawing.Color.Transparent;
             this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton1.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.iconButton1.ForeColor = System.Drawing.Color.FloralWhite;
             this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.House;
-            this.iconButton1.IconColor = System.Drawing.Color.Black;
+            this.iconButton1.IconColor = System.Drawing.Color.White;
             this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.iconButton1.IconSize = 30;
-            this.iconButton1.Location = new System.Drawing.Point(12, 4);
+            this.iconButton1.Location = new System.Drawing.Point(-2, -3);
             this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(45, 36);
+            this.iconButton1.Size = new System.Drawing.Size(45, 44);
             this.iconButton1.TabIndex = 15;
             this.iconButton1.UseVisualStyleBackColor = false;
             // 
@@ -106,10 +110,11 @@
             // 
             // panel4
             // 
-            this.panel4.BackColor = System.Drawing.Color.DodgerBlue;
+            this.panel4.BackColor = System.Drawing.Color.Transparent;
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel4.Controls.Add(this.iconButton3);
             this.panel4.Controls.Add(this.linkNotas);
+            this.panel4.ForeColor = System.Drawing.Color.Transparent;
             this.panel4.Location = new System.Drawing.Point(16, 123);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(117, 43);
@@ -119,14 +124,14 @@
             // 
             this.iconButton3.BackColor = System.Drawing.Color.Transparent;
             this.iconButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton3.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.iconButton3.ForeColor = System.Drawing.Color.FloralWhite;
             this.iconButton3.IconChar = FontAwesome.Sharp.IconChar.Pen;
-            this.iconButton3.IconColor = System.Drawing.Color.Black;
+            this.iconButton3.IconColor = System.Drawing.Color.White;
             this.iconButton3.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.iconButton3.IconSize = 30;
-            this.iconButton3.Location = new System.Drawing.Point(12, 4);
+            this.iconButton3.Location = new System.Drawing.Point(-2, -3);
             this.iconButton3.Name = "iconButton3";
-            this.iconButton3.Size = new System.Drawing.Size(45, 36);
+            this.iconButton3.Size = new System.Drawing.Size(45, 44);
             this.iconButton3.TabIndex = 17;
             this.iconButton3.UseVisualStyleBackColor = false;
             // 
@@ -149,7 +154,7 @@
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(3, 468);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(138, 12);
@@ -158,7 +163,8 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.DarkBlue;
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.panel2);
@@ -172,7 +178,7 @@
             // 
             this.labelTarea.AutoSize = true;
             this.labelTarea.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTarea.Location = new System.Drawing.Point(374, 41);
+            this.labelTarea.Location = new System.Drawing.Point(177, 46);
             this.labelTarea.Name = "labelTarea";
             this.labelTarea.Size = new System.Drawing.Size(91, 16);
             this.labelTarea.TabIndex = 12;
@@ -180,9 +186,9 @@
             // 
             // richTextBoxDescripcion
             // 
-            this.richTextBoxDescripcion.Location = new System.Drawing.Point(223, 119);
+            this.richTextBoxDescripcion.Location = new System.Drawing.Point(184, 124);
             this.richTextBoxDescripcion.Name = "richTextBoxDescripcion";
-            this.richTextBoxDescripcion.Size = new System.Drawing.Size(419, 53);
+            this.richTextBoxDescripcion.Size = new System.Drawing.Size(592, 65);
             this.richTextBoxDescripcion.TabIndex = 15;
             this.richTextBoxDescripcion.Text = "";
             this.richTextBoxDescripcion.TextChanged += new System.EventHandler(this.richTextBoxDescripcion_TextChanged);
@@ -190,7 +196,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(217, 57);
+            this.label1.Location = new System.Drawing.Point(178, 62);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(35, 13);
             this.label1.TabIndex = 16;
@@ -199,7 +205,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(223, 103);
+            this.label3.Location = new System.Drawing.Point(184, 108);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(66, 13);
             this.label3.TabIndex = 17;
@@ -209,7 +215,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(219, 212);
+            this.label6.Location = new System.Drawing.Point(184, 238);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(120, 16);
             this.label6.TabIndex = 19;
@@ -230,27 +236,28 @@
             this.buttonCrear.BackColor = System.Drawing.Color.Black;
             this.buttonCrear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCrear.ForeColor = System.Drawing.Color.White;
-            this.buttonCrear.Location = new System.Drawing.Point(396, 178);
+            this.buttonCrear.Location = new System.Drawing.Point(420, 195);
             this.buttonCrear.Name = "buttonCrear";
             this.buttonCrear.Size = new System.Drawing.Size(96, 32);
             this.buttonCrear.TabIndex = 32;
-            this.buttonCrear.Text = "Crear";
+            this.buttonCrear.Text = "Crear Tarea";
             this.buttonCrear.UseVisualStyleBackColor = false;
             this.buttonCrear.Click += new System.EventHandler(this.buttonCrear_Click);
             // 
             // dataGridViewTareas
             // 
+            this.dataGridViewTareas.BackgroundColor = System.Drawing.Color.White;
             this.dataGridViewTareas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewTareas.Location = new System.Drawing.Point(173, 257);
+            this.dataGridViewTareas.Location = new System.Drawing.Point(187, 257);
             this.dataGridViewTareas.Name = "dataGridViewTareas";
-            this.dataGridViewTareas.Size = new System.Drawing.Size(615, 225);
+            this.dataGridViewTareas.Size = new System.Drawing.Size(592, 225);
             this.dataGridViewTareas.TabIndex = 33;
             this.dataGridViewTareas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewTareas_CellContentClick);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(455, 57);
+            this.label2.Location = new System.Drawing.Point(513, 62);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(47, 13);
             this.label2.TabIndex = 35;
@@ -258,18 +265,18 @@
             // 
             // textBoxNombre
             // 
-            this.textBoxNombre.Location = new System.Drawing.Point(458, 73);
+            this.textBoxNombre.Location = new System.Drawing.Point(516, 78);
             this.textBoxNombre.Name = "textBoxNombre";
-            this.textBoxNombre.Size = new System.Drawing.Size(184, 20);
+            this.textBoxNombre.Size = new System.Drawing.Size(256, 20);
             this.textBoxNombre.TabIndex = 34;
             this.textBoxNombre.TextChanged += new System.EventHandler(this.textBoxNombre_TextChanged);
             // 
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(219, 70);
+            this.comboBox1.Location = new System.Drawing.Point(180, 75);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(185, 21);
+            this.comboBox1.Size = new System.Drawing.Size(246, 21);
             this.comboBox1.TabIndex = 36;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
@@ -277,7 +284,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.BackColor = System.Drawing.Color.RoyalBlue;
             this.ClientSize = new System.Drawing.Size(800, 491);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label2);

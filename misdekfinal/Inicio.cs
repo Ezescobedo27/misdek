@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -50,6 +51,22 @@ namespace misdekfinal
         private void Inicio_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void iconButton4_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Facebook: @misdek");
+        }
+
+        private void iconButton5_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Youtube: @misdek");
+
+        }
+
+        private void iconButton6_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Github: @misdek");
         }
     }
 }

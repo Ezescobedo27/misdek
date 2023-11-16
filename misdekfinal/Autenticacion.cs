@@ -98,7 +98,6 @@ namespace misdekfinal
 
             e.Link.Visited = true;
 
-
         }
 
         private void button1_Click(object sender, EventArgs e)

@@ -74,10 +74,9 @@ namespace misdekfinal
         {
             Inicio inicio = new Inicio();
 
-            // Mostrar el formulario de destino
             inicio.Show();
 
-            this.Close(); // Cerrar el formulario actual
+            this.Close(); 
 
         }
 
@@ -105,21 +104,18 @@ namespace misdekfinal
         {
             Notas notas = new Notas();
 
-            // Mostrar el formulario de destino
             notas.Show();
 
-            this.Close(); // Cerrar el formulario actual
+            this.Close(); 
         }
 
         private void linkTareas_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Tareas tareas = new Tareas();
 
-            // Mostrar el formulario de destino
             tareas.Show();
 
-            this.Close(); // Cerrar el formulario actual
-
+            this.Close(); 
         }
 
         private void iconButton1_Click(object sender, EventArgs e)
@@ -131,7 +127,7 @@ namespace misdekfinal
         {
 
         }
-
+         
         private void panel2_Paint_1(object sender, PaintEventArgs e)
         {
 
@@ -146,30 +142,27 @@ namespace misdekfinal
         {
             Inicio inicio = new Inicio();
 
-            // Mostrar el formulario de destino
             inicio.Show();
 
-            this.Close(); // Cerrar el formulario actual
+            this.Close();
         }
 
         private void linkTareas_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Tareas tareas = new Tareas();
 
-            // Mostrar el formulario de destino
             tareas.Show();
 
-            this.Close(); // Cerrar el formulario actual
+            this.Close();
         }
 
         private void linkNotas_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Notas notas = new Notas();
 
-            // Mostrar el formulario de destino
             notas.Show();
 
-            this.Close(); // Cerrar el formulario actual
+            this.Close(); 
         }
 
         private void button1_Click(object sender, EventArgs e)

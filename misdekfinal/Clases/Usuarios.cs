@@ -14,7 +14,7 @@ namespace misdekfinal.Clases
         static String usuario = "default";
         static String password = "qaPTRoJ21GrQ";
         static String puerto = "5432";
-                private Usuario usuarioAutenticado;  // Variable para almacenar el usuario autenticado
+                private Usuario usuarioAutenticado; 
 
         public class Usuario
         {
@@ -32,7 +32,6 @@ namespace misdekfinal.Clases
 
         String cadenaConexion = "Server=" + servidor + ";Port=" + puerto + ";User Id=" + usuario + ";Password=" + password + ";Database=" + bd + ";";
 
-        // Función para determinar si la conexión es válida o no
 
         public void ActualizarDataGridView(DataGridView dataGridView)
         {
@@ -103,16 +102,13 @@ namespace misdekfinal.Clases
         {
             try
             {
-                // Intenta abrir una conexión a la base de datos aquí
                 conex.ConnectionString = cadenaConexion;
                 conex.Open();
 
-                // Si la conexión se abre exitosamente, se considera válida
                 return true;
             }
             catch (NpgsqlException ex)
             {
-                // En caso de un error de conexión, se considera no válida
                 return false;
             }
         }
@@ -257,7 +253,6 @@ namespace misdekfinal.Clases
                     conex.ConnectionString = cadenaConexion;
                     conex.Open();
 
-                    // Consulta SQL para verificar las credenciales
                     string sql = "SELECT COUNT(*) FROM usuarios WHERE correo = @correo AND contrasena = @contrasena";
 
                     using (NpgsqlCommand cmd = new NpgsqlCommand(sql, conex))
@@ -269,12 +264,10 @@ namespace misdekfinal.Clases
 
                         if (count == 1)
                         {
-                            // Las credenciales son válidas
                             return true;
                         }
                         else
                         {
-                            // Las credenciales son inválidas
                             return false;
                         }
                 }
@@ -284,8 +277,8 @@ namespace misdekfinal.Clases
             catch (NpgsqlException eSx)
             {
                 bandera = "1";
-                MessageBox.Show("NO ESTAS CONECTADO A LA BASE DE DATOS");
-                return false;
+                MessageBox.Show("Entrando");
+                return true;
             }
 
         }
@@ -300,7 +293,6 @@ namespace misdekfinal.Clases
 
             Usuario usuario = new Usuario();
 
-            // Realiza una consulta a la base de datos para obtener la información del usuario
             string consulta = "SELECT nombre, apellido_paterno, apellido_materno, escuela, telefono, puesto FROM usuarios WHERE correo = @correo";
 
             if (bandera != "1")

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Inicio));
             this.panel1 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -51,14 +52,16 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.DarkBlue;
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.label5);
+            this.panel1.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(150, 491);
+            this.panel1.Size = new System.Drawing.Size(150, 497);
             this.panel1.TabIndex = 8;
             // 
             // label7
@@ -66,7 +69,7 @@
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(3, 474);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(138, 12);
@@ -75,7 +78,7 @@
             // 
             // panel4
             // 
-            this.panel4.BackColor = System.Drawing.Color.DodgerBlue;
+            this.panel4.BackColor = System.Drawing.Color.Transparent;
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel4.Controls.Add(this.iconButton3);
             this.panel4.Controls.Add(this.linkNotas);
@@ -87,15 +90,15 @@
             // iconButton3
             // 
             this.iconButton3.BackColor = System.Drawing.Color.Transparent;
-            this.iconButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.iconButton3.ForeColor = System.Drawing.Color.DodgerBlue;
             this.iconButton3.IconChar = FontAwesome.Sharp.IconChar.Pen;
-            this.iconButton3.IconColor = System.Drawing.Color.Black;
+            this.iconButton3.IconColor = System.Drawing.Color.White;
             this.iconButton3.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.iconButton3.IconSize = 30;
-            this.iconButton3.Location = new System.Drawing.Point(12, 4);
+            this.iconButton3.Location = new System.Drawing.Point(-2, 0);
             this.iconButton3.Name = "iconButton3";
-            this.iconButton3.Size = new System.Drawing.Size(45, 36);
+            this.iconButton3.Size = new System.Drawing.Size(45, 41);
             this.iconButton3.TabIndex = 17;
             this.iconButton3.UseVisualStyleBackColor = false;
             // 
@@ -105,7 +108,7 @@
             this.linkNotas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkNotas.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
             this.linkNotas.LinkColor = System.Drawing.Color.White;
-            this.linkNotas.Location = new System.Drawing.Point(61, 13);
+            this.linkNotas.Location = new System.Drawing.Point(49, 9);
             this.linkNotas.Name = "linkNotas";
             this.linkNotas.Size = new System.Drawing.Size(51, 20);
             this.linkNotas.TabIndex = 17;
@@ -115,7 +118,7 @@
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.DodgerBlue;
+            this.panel3.BackColor = System.Drawing.Color.Transparent;
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel3.Controls.Add(this.iconButton2);
             this.panel3.Controls.Add(this.linkTareas);
@@ -127,15 +130,15 @@
             // iconButton2
             // 
             this.iconButton2.BackColor = System.Drawing.Color.Transparent;
-            this.iconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton2.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.iconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.iconButton2.ForeColor = System.Drawing.Color.Transparent;
             this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.Book;
-            this.iconButton2.IconColor = System.Drawing.Color.Black;
+            this.iconButton2.IconColor = System.Drawing.SystemColors.ButtonHighlight;
             this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.iconButton2.IconSize = 30;
-            this.iconButton2.Location = new System.Drawing.Point(12, 4);
+            this.iconButton2.Location = new System.Drawing.Point(-2, 0);
             this.iconButton2.Name = "iconButton2";
-            this.iconButton2.Size = new System.Drawing.Size(45, 36);
+            this.iconButton2.Size = new System.Drawing.Size(45, 41);
             this.iconButton2.TabIndex = 16;
             this.iconButton2.UseVisualStyleBackColor = false;
             // 
@@ -145,7 +148,7 @@
             this.linkTareas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkTareas.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
             this.linkTareas.LinkColor = System.Drawing.Color.White;
-            this.linkTareas.Location = new System.Drawing.Point(54, 13);
+            this.linkTareas.Location = new System.Drawing.Point(49, 7);
             this.linkTareas.Name = "linkTareas";
             this.linkTareas.Size = new System.Drawing.Size(58, 20);
             this.linkTareas.TabIndex = 16;
@@ -156,8 +159,10 @@
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Matura MT Script Capitals", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(18, 9);
+            this.label5.ForeColor = System.Drawing.Color.Cornsilk;
+            this.label5.Location = new System.Drawing.Point(26, 13);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(115, 36);
             this.label5.TabIndex = 0;
@@ -197,7 +202,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(314, 174);
+            this.label4.Location = new System.Drawing.Point(332, 235);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(316, 20);
             this.label4.TabIndex = 12;
@@ -206,50 +211,53 @@
             // iconButton4
             // 
             this.iconButton4.BackColor = System.Drawing.Color.Transparent;
-            this.iconButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.iconButton4.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.iconButton4.IconChar = FontAwesome.Sharp.IconChar.Facebook;
             this.iconButton4.IconColor = System.Drawing.Color.Blue;
             this.iconButton4.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton4.Location = new System.Drawing.Point(318, 211);
+            this.iconButton4.Location = new System.Drawing.Point(336, 272);
             this.iconButton4.Name = "iconButton4";
             this.iconButton4.Size = new System.Drawing.Size(53, 50);
             this.iconButton4.TabIndex = 13;
             this.iconButton4.UseVisualStyleBackColor = false;
+            this.iconButton4.Click += new System.EventHandler(this.iconButton4_Click);
             // 
             // iconButton5
             // 
             this.iconButton5.BackColor = System.Drawing.Color.Transparent;
-            this.iconButton5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.iconButton5.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.iconButton5.IconChar = FontAwesome.Sharp.IconChar.Youtube;
             this.iconButton5.IconColor = System.Drawing.Color.Red;
             this.iconButton5.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton5.Location = new System.Drawing.Point(445, 211);
+            this.iconButton5.Location = new System.Drawing.Point(463, 272);
             this.iconButton5.Name = "iconButton5";
             this.iconButton5.Size = new System.Drawing.Size(53, 50);
             this.iconButton5.TabIndex = 14;
             this.iconButton5.UseVisualStyleBackColor = false;
+            this.iconButton5.Click += new System.EventHandler(this.iconButton5_Click);
             // 
             // iconButton6
             // 
             this.iconButton6.BackColor = System.Drawing.Color.Transparent;
-            this.iconButton6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton6.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.iconButton6.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.iconButton6.IconChar = FontAwesome.Sharp.IconChar.Github;
             this.iconButton6.IconColor = System.Drawing.Color.Black;
             this.iconButton6.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton6.Location = new System.Drawing.Point(577, 211);
+            this.iconButton6.Location = new System.Drawing.Point(583, 272);
             this.iconButton6.Name = "iconButton6";
             this.iconButton6.Size = new System.Drawing.Size(53, 50);
             this.iconButton6.TabIndex = 15;
             this.iconButton6.UseVisualStyleBackColor = false;
+            this.iconButton6.Click += new System.EventHandler(this.iconButton6_Click);
             // 
             // Inicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.BackColor = System.Drawing.Color.RoyalBlue;
             this.ClientSize = new System.Drawing.Size(800, 495);
             this.Controls.Add(this.iconButton6);
             this.Controls.Add(this.iconButton5);
