@@ -54,9 +54,26 @@ namespace misdekfinal
 
         {
             ActualizarDataGridView();
+            ConfigurarDataGridView();
             LlenarComboBoxUsuarios();
             LlenarComboBoxSeccionesLocal();
+            
 
+
+        }
+
+        private void ConfigurarDataGridView()
+        {
+            // Configurar las columnas del DataGridView
+            dataGridViewNotas.AutoGenerateColumns = true;
+            dataGridViewNotas.ReadOnly = true;
+            dataGridViewNotas.AllowUserToAddRows = false;
+
+            DataGridViewButtonColumn eliminarColumn = new DataGridViewButtonColumn();
+            eliminarColumn.HeaderText = "Eliminar";
+            eliminarColumn.Text = "Eliminar";
+            eliminarColumn.UseColumnTextForButtonValue = true;
+            dataGridViewNotas.Columns.Add(eliminarColumn);
         }
         private void LlenarComboBoxUsuarios()
         {
@@ -124,7 +141,17 @@ namespace misdekfinal
 
         private void dataGridViewNotas_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.RowIndex >= 0 && dataGridViewNotas.Columns[e.ColumnIndex] is DataGridViewButtonColumn && dataGridViewNotas.Columns[e.ColumnIndex].HeaderText.Equals("Eliminar"))
+            {
+                int idNota = Convert.ToInt32(dataGridViewNotas.Rows[e.RowIndex].Cells["id_nota"].Value);
 
+                // Lógica para eliminar la tarea con el ID obtenido
+                usuarios.EliminarTareaNotas(idNota); // Reemplaza esto con tu lógica de eliminación
+
+                MessageBox.Show("Tarea eliminada correctamente");
+
+                ActualizarDataGridView();
+            }
         }
     }
 }

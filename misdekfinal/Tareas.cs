@@ -1,4 +1,5 @@
 ﻿using misdekfinal.Clases;
+using Npgsql;
 using System;
 using System.Windows.Forms;
 
@@ -7,6 +8,8 @@ namespace misdekfinal
     public partial class Tareas : Form
     {
         private Usuarios usuarios = new Usuarios();
+        NpgsqlConnection conex = new NpgsqlConnection(); // Definición de conex como NpgsqlConnection
+        private int idTareaSeleccionada; // Declaración de idTareaSeleccionada
 
         public Tareas()
         {
@@ -71,7 +74,57 @@ namespace misdekfinal
 
                 ActualizarDataGridView();
             }
+            if (e.RowIndex >= 0 && dataGridViewTareas.Columns[e.ColumnIndex] is DataGridViewButtonColumn && dataGridViewTareas.Columns[e.ColumnIndex].HeaderText.Equals("Editar"))
+            {
+                int idTarea = Convert.ToInt32(dataGridViewTareas.Rows[e.RowIndex].Cells["id_tarea"].Value);
+                CargarDetallesTareaParaEdicion(idTarea);
+
+                MessageBox.Show("Editar Tareas con id " + idTarea);  
+            }
         }
+        static String servidor = "ep-raspy-firefly-54852420-pooler.us-east-1.postgres.vercel-storage.com";
+        static String bd = "verceldb";
+        static String usuario = "default";
+        static String password = "qaPTRoJ21GrQ";
+        static String puerto = "5432";
+        private void CargarDetallesTareaParaEdicion(int idTarea)
+        {
+
+            try
+            {
+                String cadenaConexion = "Server=" + servidor + ";Port=" + puerto + ";User Id=" + usuario + ";Password=" + password + ";Database=" + bd + ";";
+                conex.Open();
+
+                string sql = "SELECT nombre, descripcion FROM tareas WHERE id_tarea = @idTarea";
+
+                using (NpgsqlCommand cmd = new NpgsqlCommand(sql, conex))
+                {
+                    cmd.Parameters.AddWithValue("@idTarea", idTarea);
+
+                    using (NpgsqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            // Mostrar los detalles de la tarea seleccionada en los controles del formulario actual
+                            textBoxNombre.Text = reader["nombre"].ToString();
+                            richTextBoxDescripcion.Text = reader["descripcion"].ToString();
+
+                            // Guardar el ID de la tarea seleccionada para la actualización de la tarea más adelante
+                            this.idTareaSeleccionada = idTarea;
+                        }
+                    }
+                }
+            }
+            catch (NpgsqlException ex)
+            {
+                MessageBox.Show("Error al cargar los detalles de la tarea para edición: " + ex.Message);
+            }
+            finally
+            {
+                conex.Close();
+            }
+        }
+
 
 
 

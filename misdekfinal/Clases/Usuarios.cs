@@ -90,6 +90,32 @@ namespace misdekfinal.Clases
             }
         }
 
+
+        public void EliminarTareaNotas(int idNota)
+        {
+            try
+            {
+                conex.ConnectionString = cadenaConexion;
+                conex.Open();
+
+                string sql = "DELETE FROM notas WHERE id_nota = @idNota";
+
+                using (NpgsqlCommand cmd = new NpgsqlCommand(sql, conex))
+                {
+                    cmd.Parameters.AddWithValue("@idNota", idNota);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            catch (NpgsqlException ex)
+            {
+                MessageBox.Show("Error al eliminar la nota: " + ex.Message);
+            }
+            finally
+            {
+                conex.Close();
+            }
+        }
+
         public void ActualizarDataGridViewNotas(DataGridView dataGridView)
         {
             try
