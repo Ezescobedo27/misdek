@@ -240,7 +240,7 @@
             this.buttonCrear.Name = "buttonCrear";
             this.buttonCrear.Size = new System.Drawing.Size(96, 32);
             this.buttonCrear.TabIndex = 32;
-            this.buttonCrear.Text = "Crear Tarea";
+            this.buttonCrear.Text = "Guardar";
             this.buttonCrear.UseVisualStyleBackColor = false;
             this.buttonCrear.Click += new System.EventHandler(this.buttonCrear_Click);
             // 

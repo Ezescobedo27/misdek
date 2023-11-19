@@ -277,6 +277,37 @@ namespace misdekfinal.Clases
             return nombresSecciones;
         }
 
+        public void ActualizarTarea(int idTarea, string nombreAutor, string nombreTarea, string descripcionTarea)
+        {
+            try
+            {
+                conex.ConnectionString = cadenaConexion;
+                conex.Open();
+
+                string sql = "UPDATE tareas SET autor = @nombreAutor, nombre = @nombreTarea, descripcion = @descripcionTarea WHERE id_tarea = @idTarea";
+
+                using (NpgsqlCommand cmd = new NpgsqlCommand(sql, conex))
+                {
+                    cmd.Parameters.AddWithValue("@nombreAutor", nombreAutor);
+                    cmd.Parameters.AddWithValue("@nombreTarea", nombreTarea);
+                    cmd.Parameters.AddWithValue("@descripcionTarea", descripcionTarea);
+                    cmd.Parameters.AddWithValue("@idTarea", idTarea);
+
+                    cmd.ExecuteNonQuery();
+
+                    MessageBox.Show("Tarea actualizada correctamente.");
+                }
+            }
+            catch (NpgsqlException ex)
+            {
+                MessageBox.Show("Error al actualizar la tarea: " + ex.Message);
+            }
+            finally
+            {
+                conex.Close();
+            }
+        }
+
 
         public void CrearTarea(string nombreAutor, string nombreTarea, string descripcionTarea)
         {
@@ -424,4 +455,8 @@ namespace misdekfinal.Clases
     }
 
 
+
+
 }
+
+

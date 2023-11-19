@@ -10,6 +10,7 @@ namespace misdekfinal
         private Usuarios usuarios = new Usuarios();
         NpgsqlConnection conex = new NpgsqlConnection(); // Definición de conex como NpgsqlConnection
         private int idTareaSeleccionada; // Declaración de idTareaSeleccionada
+        private bool editandoTarea = false;
 
         public Tareas()
         {
@@ -84,31 +85,58 @@ namespace misdekfinal
 
                 //  CargarDetallesTareaParaEdicion(idTarea);
 
-
-                MessageBox.Show("ID: " + idTarea+ " Seleccionado, Agrega los nuevos valores en los campos" + detallesTarea);  
+                idTareaSeleccionada = idTarea;
+                editandoTarea = true;
+                MessageBox.Show("ID:"+idTarea+" Seleccionado, Modifica los Campos de tú registro");  
             }
         }
-        private bool editandoTarea = false;
 
         private void buttonCrear_Click(object sender, EventArgs e)
         {
-            string nombreAutor = comboBox1.SelectedItem.ToString();
-            string nombreTarea = textBoxNombre.Text;
-            string descripcionTarea = richTextBoxDescripcion.Text;
-
-
-            if (string.IsNullOrEmpty(nombreAutor) || string.IsNullOrEmpty(nombreTarea) || string.IsNullOrEmpty(descripcionTarea))
+            if (editandoTarea)
             {
-                MessageBox.Show("Todos los campos son obligatorios. Por favor, complete la información.");
-                return; 
+                // Obtener los valores de los campos
+                string nombreAutor = comboBox1.SelectedItem.ToString();
+                string nombreTarea = textBoxNombre.Text;
+                string descripcionTarea = richTextBoxDescripcion.Text;
+
+                if (string.IsNullOrEmpty(nombreAutor) || string.IsNullOrEmpty(nombreTarea) || string.IsNullOrEmpty(descripcionTarea))
+                {
+                    MessageBox.Show("Todos los campos son obligatorios. Por favor, complete la información.");
+                    return;
+                }
+
+                // Actualizar la tarea con los nuevos valores
+                usuarios.ActualizarTarea(idTareaSeleccionada, nombreAutor, nombreTarea, descripcionTarea);
+                ActualizarDataGridView();
+
+                // Restaurar el formulario para permitir la creación de una nueva tarea
+                textBoxNombre.Text = "";
+                richTextBoxDescripcion.Text = "";
+                comboBox1.SelectedItem = "";
+                editandoTarea = false; // Cambiar el estado de edición
             }
-            usuarios.CrearTarea(nombreAutor, nombreTarea, descripcionTarea);
+            else // Crear una nueva tarea
+            {
+                string nombreAutor = comboBox1.SelectedItem.ToString();
+                string nombreTarea = textBoxNombre.Text;
+                string descripcionTarea = richTextBoxDescripcion.Text;
 
-            textBoxNombre.Text = "";
-            richTextBoxDescripcion.Text = "";
-            comboBox1.SelectedItem = "";
+                if (string.IsNullOrEmpty(nombreAutor) || string.IsNullOrEmpty(nombreTarea) || string.IsNullOrEmpty(descripcionTarea))
+                {
+                    MessageBox.Show("Todos los campos son obligatorios. Por favor, complete la información.");
+                    return;
+                }
 
-            ActualizarDataGridView();
+                // Crear una nueva tarea
+                usuarios.CrearTarea(nombreAutor, nombreTarea, descripcionTarea);
+                ActualizarDataGridView();
+
+                // Limpiar los campos después de crear una nueva tarea
+                textBoxNombre.Text = "";
+                richTextBoxDescripcion.Text = "";
+                comboBox1.SelectedItem = "";
+            }
 
 
         }
