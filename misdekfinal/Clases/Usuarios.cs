@@ -33,6 +33,47 @@ namespace misdekfinal.Clases
         String cadenaConexion = "Server=" + servidor + ";Port=" + puerto + ";User Id=" + usuario + ";Password=" + password + ";Database=" + bd + ";";
 
 
+        public Tuple<string, string, string> ObtenerDetallesTarea(int idTarea)
+        {
+            Tuple<string, string, string> detallesTarea = null;
+
+            try
+            {
+                conex.ConnectionString = cadenaConexion;
+                conex.Open();
+
+                string sql = "SELECT autor, nombre, descripcion FROM tareas WHERE id_tarea = @idTarea";
+
+                using (NpgsqlCommand cmd = new NpgsqlCommand(sql, conex))
+                {
+                    cmd.Parameters.AddWithValue("@idTarea", idTarea);
+
+                    using (NpgsqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            string autor = reader["autor"].ToString();
+                            string nombre = reader["nombre"].ToString();
+                            string descripcion = reader["descripcion"].ToString();
+
+                            detallesTarea = Tuple.Create(autor, nombre, descripcion);
+                        }
+                    }
+                }
+            }
+            catch (NpgsqlException ex)
+            {
+                MessageBox.Show("Error al obtener los detalles de la tarea: " + ex.Message);
+            }
+            finally
+            {
+                conex.Close();
+            }
+
+            return detallesTarea;
+        }
+
+
         public void ActualizarDataGridView(DataGridView dataGridView)
         {
             try
