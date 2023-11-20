@@ -14,7 +14,8 @@ namespace misdekfinal
     public partial class Notas : Form
     {
         private Usuarios usuarios = new Usuarios();
-
+        private int idNotaSelccionada; // Declaración de idNotaSelccionada
+        private bool editandoTarea = false;
         public Notas()
         {
             InitializeComponent();
@@ -64,7 +65,6 @@ namespace misdekfinal
 
         private void ConfigurarDataGridView()
         {
-            // Configurar las columnas del DataGridView
             dataGridViewNotas.AutoGenerateColumns = true;
             dataGridViewNotas.ReadOnly = true;
             dataGridViewNotas.AllowUserToAddRows = false;
@@ -73,8 +73,15 @@ namespace misdekfinal
             eliminarColumn.HeaderText = "Eliminar";
             eliminarColumn.Text = "Eliminar";
             eliminarColumn.UseColumnTextForButtonValue = true;
-            dataGridViewNotas.Columns.Add(eliminarColumn);
+            dataGridViewNotas.Columns.Insert(0, eliminarColumn); // Insertar la columna 'Eliminar' en el índice 0
+
+            DataGridViewButtonColumn editarColumn = new DataGridViewButtonColumn();
+            editarColumn.HeaderText = "Editar";
+            editarColumn.Text = "Editar";
+            editarColumn.UseColumnTextForButtonValue = true;
+            dataGridViewNotas.Columns.Insert(1, editarColumn); // Insertar la columna 'Editar' en el índice 1
         }
+
         private void LlenarComboBoxUsuarios()
         {
             // Obtener la lista de nombres de usuarios desde la base de datos
@@ -110,35 +117,6 @@ namespace misdekfinal
         {
 
         }
-
-        private void buttonCrearNota_Click(object sender, EventArgs e)
-        {
-            string nombreAutor = comboBoxAutor.SelectedItem.ToString();
-            string nombreTarea = textBoxNombre.Text;
-            string descripcionTarea = richTextBox1.Text;
-            string nombreSeccion = comboBoxSeccion.SelectedItem.ToString();
-
-            if (string.IsNullOrEmpty(nombreAutor) || string.IsNullOrEmpty(nombreTarea) || string.IsNullOrEmpty(descripcionTarea))
-            {
-                MessageBox.Show("Todos los campos son obligatorios. Por favor, complete la información.");
-                return;
-            }
-            usuarios.CrearNota(nombreAutor, nombreTarea, descripcionTarea, nombreSeccion);
-
-            textBoxNombre.Text = "";
-            richTextBox1.Text = "";
-            comboBoxAutor.SelectedItem = "";
-
-            ActualizarDataGridView();
-
-        }
-
-        private void ActualizarDataGridView()
-        {
-            usuarios.ActualizarDataGridViewNotas(dataGridViewNotas);
-
-        }
-
         private void dataGridViewNotas_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0 && dataGridViewNotas.Columns[e.ColumnIndex] is DataGridViewButtonColumn && dataGridViewNotas.Columns[e.ColumnIndex].HeaderText.Equals("Eliminar"))
@@ -152,6 +130,87 @@ namespace misdekfinal
 
                 ActualizarDataGridView();
             }
+            if (e.RowIndex >= 0 && dataGridViewNotas.Columns[e.ColumnIndex] is DataGridViewButtonColumn && dataGridViewNotas.Columns[e.ColumnIndex].HeaderText.Equals("Editar"))
+            {
+                int idNota = Convert.ToInt32(dataGridViewNotas.Rows[e.RowIndex].Cells["id_nota"].Value);
+                Tuple<string, string, string, string> detallesNota = usuarios.ObtenerDetallesNotas(idNota);
+
+                if (detallesNota != null)
+                {
+                    comboBoxAutor.Text = detallesNota.Item1;
+                    textBoxNombre.Text = detallesNota.Item2;
+                    richTextBox1.Text = detallesNota.Item3;
+                    comboBoxSeccion.Text = detallesNota.Item4;
+
+                    idNotaSelccionada = idNota;
+                    editandoTarea = true;
+
+                    MessageBox.Show("ID:" + idNota + " Seleccionado, Modifica los Campos de tu registro");
+                }
+                else
+                {
+                    MessageBox.Show("No se encontraron detalles para la nota seleccionada.");
+                }
+            }
         }
+
+
+        private void buttonCrearNota_Click(object sender, EventArgs e)
+        {
+            
+            if (editandoTarea)
+            {
+                string nombreAutor = comboBoxAutor.SelectedItem.ToString();
+                string nombreNota = textBoxNombre.Text;
+                string descripcionNota = richTextBox1.Text;
+                string seccionNota = comboBoxSeccion.SelectedItem.ToString();
+
+                if (string.IsNullOrEmpty(nombreAutor) || string.IsNullOrEmpty(nombreNota) || string.IsNullOrEmpty(descripcionNota))
+                {
+                    MessageBox.Show("Todos los campos son obligatorios. Por favor, complete la información.");
+                    return;
+                }
+
+                usuarios.ActualizarNota(idNotaSelccionada, nombreAutor, nombreNota, descripcionNota, seccionNota);
+
+                textBoxNombre.Text = "";
+                richTextBox1.Text = "";
+                comboBoxAutor.SelectedItem = "";
+
+                ActualizarDataGridView();
+
+            } else
+            {
+                string nombreAutor = comboBoxAutor.SelectedItem.ToString();
+                string nombreTarea = textBoxNombre.Text;
+                string descripcionTarea = richTextBox1.Text;
+                string nombreSeccion = comboBoxSeccion.SelectedItem.ToString();
+
+                if (string.IsNullOrEmpty(nombreAutor) || string.IsNullOrEmpty(nombreTarea) || string.IsNullOrEmpty(descripcionTarea))
+                {
+                    MessageBox.Show("Todos los campos son obligatorios. Por favor, complete la información.");
+                    return;
+                }
+
+                usuarios.CrearNota(nombreAutor, nombreTarea, descripcionTarea, nombreSeccion);
+
+                textBoxNombre.Text = "";
+                richTextBox1.Text = "";
+                comboBoxAutor.SelectedItem = "";
+
+                ActualizarDataGridView();
+            }
+           
+           
+
+        }
+
+        private void ActualizarDataGridView()
+        {
+            usuarios.ActualizarDataGridViewNotas(dataGridViewNotas);
+
+        }
+
+        
     }
 }

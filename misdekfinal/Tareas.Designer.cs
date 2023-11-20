@@ -177,18 +177,18 @@
             // labelTarea
             // 
             this.labelTarea.AutoSize = true;
-            this.labelTarea.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTarea.Location = new System.Drawing.Point(177, 46);
+            this.labelTarea.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTarea.Location = new System.Drawing.Point(158, 47);
             this.labelTarea.Name = "labelTarea";
-            this.labelTarea.Size = new System.Drawing.Size(91, 16);
+            this.labelTarea.Size = new System.Drawing.Size(104, 20);
             this.labelTarea.TabIndex = 12;
             this.labelTarea.Text = "Crear Tarea";
             // 
             // richTextBoxDescripcion
             // 
-            this.richTextBoxDescripcion.Location = new System.Drawing.Point(184, 124);
+            this.richTextBoxDescripcion.Location = new System.Drawing.Point(165, 125);
             this.richTextBoxDescripcion.Name = "richTextBoxDescripcion";
-            this.richTextBoxDescripcion.Size = new System.Drawing.Size(592, 65);
+            this.richTextBoxDescripcion.Size = new System.Drawing.Size(707, 65);
             this.richTextBoxDescripcion.TabIndex = 15;
             this.richTextBoxDescripcion.Text = "";
             this.richTextBoxDescripcion.TextChanged += new System.EventHandler(this.richTextBoxDescripcion_TextChanged);
@@ -196,7 +196,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(178, 62);
+            this.label1.Location = new System.Drawing.Point(159, 63);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(35, 13);
             this.label1.TabIndex = 16;
@@ -205,7 +205,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(184, 108);
+            this.label3.Location = new System.Drawing.Point(165, 109);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(66, 13);
             this.label3.TabIndex = 17;
@@ -214,10 +214,10 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(184, 238);
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(165, 239);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(120, 16);
+            this.label6.Size = new System.Drawing.Size(138, 20);
             this.label6.TabIndex = 19;
             this.label6.Text = "Lista de Tareas:";
             // 
@@ -225,7 +225,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Bauhaus 93", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(389, -1);
+            this.label8.Location = new System.Drawing.Point(454, -1);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(127, 42);
             this.label8.TabIndex = 31;
@@ -236,7 +236,7 @@
             this.buttonCrear.BackColor = System.Drawing.Color.Black;
             this.buttonCrear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCrear.ForeColor = System.Drawing.Color.White;
-            this.buttonCrear.Location = new System.Drawing.Point(420, 195);
+            this.buttonCrear.Location = new System.Drawing.Point(401, 196);
             this.buttonCrear.Name = "buttonCrear";
             this.buttonCrear.Size = new System.Drawing.Size(96, 32);
             this.buttonCrear.TabIndex = 32;
@@ -248,16 +248,16 @@
             // 
             this.dataGridViewTareas.BackgroundColor = System.Drawing.Color.White;
             this.dataGridViewTareas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewTareas.Location = new System.Drawing.Point(187, 257);
+            this.dataGridViewTareas.Location = new System.Drawing.Point(168, 258);
             this.dataGridViewTareas.Name = "dataGridViewTareas";
-            this.dataGridViewTareas.Size = new System.Drawing.Size(592, 225);
+            this.dataGridViewTareas.Size = new System.Drawing.Size(704, 225);
             this.dataGridViewTareas.TabIndex = 33;
             this.dataGridViewTareas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewTareas_CellContentClick);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(513, 62);
+            this.label2.Location = new System.Drawing.Point(558, 60);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(47, 13);
             this.label2.TabIndex = 35;
@@ -265,18 +265,18 @@
             // 
             // textBoxNombre
             // 
-            this.textBoxNombre.Location = new System.Drawing.Point(516, 78);
+            this.textBoxNombre.Location = new System.Drawing.Point(561, 76);
             this.textBoxNombre.Name = "textBoxNombre";
-            this.textBoxNombre.Size = new System.Drawing.Size(256, 20);
+            this.textBoxNombre.Size = new System.Drawing.Size(311, 20);
             this.textBoxNombre.TabIndex = 34;
             this.textBoxNombre.TextChanged += new System.EventHandler(this.textBoxNombre_TextChanged);
             // 
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(180, 75);
+            this.comboBox1.Location = new System.Drawing.Point(161, 76);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(246, 21);
+            this.comboBox1.Size = new System.Drawing.Size(315, 21);
             this.comboBox1.TabIndex = 36;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
@@ -285,7 +285,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.RoyalBlue;
-            this.ClientSize = new System.Drawing.Size(800, 491);
+            this.ClientSize = new System.Drawing.Size(884, 491);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBoxNombre);

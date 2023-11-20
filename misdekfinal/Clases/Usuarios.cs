@@ -74,6 +74,48 @@ namespace misdekfinal.Clases
         }
 
 
+        public Tuple<string, string, string, string> ObtenerDetallesNotas(int idNota)
+        {
+            Tuple<string, string, string, string> detallesNota = null;
+
+            try
+            {
+                conex.ConnectionString = cadenaConexion;
+                conex.Open();
+
+                string sql = "SELECT autor, nombre, descripcion, seccion FROM notas WHERE id_nota = @idNota";
+
+                using (NpgsqlCommand cmd = new NpgsqlCommand(sql, conex))
+                {
+                    cmd.Parameters.AddWithValue("@idNota", idNota);
+
+                    using (NpgsqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            string autor = reader["autor"].ToString();
+                            string nombre = reader["nombre"].ToString();
+                            string descripcion = reader["descripcion"].ToString();
+                            string seccion = reader["seccion"].ToString();
+
+                            detallesNota = Tuple.Create(autor, nombre, descripcion, seccion);
+                        }
+                    }
+                }
+            }
+            catch (NpgsqlException ex)
+            {
+                MessageBox.Show("Error al obtener los detalles de la nota: " + ex.Message);
+            }
+            finally
+            {
+                conex.Close();
+            }
+
+            return detallesNota;
+        }
+
+
         public void ActualizarDataGridView(DataGridView dataGridView)
         {
             try
@@ -330,6 +372,38 @@ namespace misdekfinal.Clases
             catch (NpgsqlException ex)
             {
                 MessageBox.Show("Error al crear la tarea: " + ex.Message);
+            }
+            finally
+            {
+                conex.Close();
+            }
+        }
+
+        public void ActualizarNota(int idNota, string nombreAutor, string nombreNota, string descripcionNota, string seccionNota)
+        {
+            try
+            {
+                conex.ConnectionString = cadenaConexion;
+                conex.Open();
+
+                string sql = "UPDATE notas SET autor = @nombreAutor, nombre = @nombreNota, descripcion = @descripcionNota, seccion = @seccionNota WHERE id_nota = @idNota";
+
+                using (NpgsqlCommand cmd = new NpgsqlCommand(sql, conex))
+                {
+                    cmd.Parameters.AddWithValue("@nombreAutor", nombreAutor);
+                    cmd.Parameters.AddWithValue("@nombreNota", nombreNota);
+                    cmd.Parameters.AddWithValue("@descripcionNota", descripcionNota);
+                    cmd.Parameters.AddWithValue("@seccionNota", seccionNota);
+                    cmd.Parameters.AddWithValue("@idNota", idNota);
+
+                    cmd.ExecuteNonQuery();
+
+                    MessageBox.Show("Nota actualizada correctamente.");
+                }
+            }
+            catch (NpgsqlException ex)
+            {
+                MessageBox.Show("Error al actualizar la nota: " + ex.Message);
             }
             finally
             {
