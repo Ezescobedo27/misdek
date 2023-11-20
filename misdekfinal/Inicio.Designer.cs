@@ -40,7 +40,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.iconButton4 = new FontAwesome.Sharp.IconButton();
             this.iconButton5 = new FontAwesome.Sharp.IconButton();
@@ -171,6 +170,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Bauhaus 93", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(293, 3);
             this.label1.Name = "label1";
@@ -181,26 +181,20 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(217, 58);
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Location = new System.Drawing.Point(164, 58);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(525, 18);
+            this.label2.Size = new System.Drawing.Size(624, 50);
             this.label2.TabIndex = 10;
-            this.label2.Text = "Misdek es una empresa internacional de desarrollo de software desde nuestra ";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(372, 76);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(194, 18);
-            this.label3.TabIndex = 11;
-            this.label3.Text = "computadora hasta tu hogar";
+            this.label2.Text = "Misdek es una empresa internacional de desarrollo de software \r\ndesde nuestra com" +
+    "putadora hasta tu hogar.\r\n";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(332, 235);
             this.label4.Name = "label4";
@@ -211,7 +205,7 @@
             // iconButton4
             // 
             this.iconButton4.BackColor = System.Drawing.Color.Transparent;
-            this.iconButton4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.iconButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.iconButton4.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.iconButton4.IconChar = FontAwesome.Sharp.IconChar.Facebook;
             this.iconButton4.IconColor = System.Drawing.Color.Blue;
@@ -226,7 +220,7 @@
             // iconButton5
             // 
             this.iconButton5.BackColor = System.Drawing.Color.Transparent;
-            this.iconButton5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.iconButton5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.iconButton5.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.iconButton5.IconChar = FontAwesome.Sharp.IconChar.Youtube;
             this.iconButton5.IconColor = System.Drawing.Color.Red;
@@ -241,7 +235,7 @@
             // iconButton6
             // 
             this.iconButton6.BackColor = System.Drawing.Color.Transparent;
-            this.iconButton6.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.iconButton6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.iconButton6.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.iconButton6.IconChar = FontAwesome.Sharp.IconChar.Github;
             this.iconButton6.IconColor = System.Drawing.Color.Black;
@@ -258,12 +252,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.RoyalBlue;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 495);
             this.Controls.Add(this.iconButton6);
             this.Controls.Add(this.iconButton5);
             this.Controls.Add(this.iconButton4);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
@@ -295,7 +290,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private FontAwesome.Sharp.IconButton iconButton4;
         private FontAwesome.Sharp.IconButton iconButton5;

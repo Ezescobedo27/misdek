@@ -52,7 +52,7 @@ namespace misdekfinal
         {
 
         }
-
+        // Depediendo de la red social a la que le de click, le aparecera como aparecemos
         private void iconButton4_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Facebook: @misdek");

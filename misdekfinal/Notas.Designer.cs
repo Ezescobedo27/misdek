@@ -177,6 +177,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(161, 251);
             this.label6.Name = "label6";
@@ -187,7 +188,8 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(161, 127);
+            this.label3.BackColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(161, 128);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(66, 13);
             this.label3.TabIndex = 25;
@@ -196,11 +198,13 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(161, 77);
+            this.label1.BackColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(162, 77);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(47, 13);
             this.label1.TabIndex = 24;
             this.label1.Text = "Nombre:";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // richTextBox1
             // 
@@ -221,6 +225,7 @@
             // labelTarea
             // 
             this.labelTarea.AutoSize = true;
+            this.labelTarea.BackColor = System.Drawing.Color.Transparent;
             this.labelTarea.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTarea.Location = new System.Drawing.Point(158, 57);
             this.labelTarea.Name = "labelTarea";
@@ -231,7 +236,8 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(701, 76);
+            this.label4.BackColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(701, 77);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(49, 13);
             this.label4.TabIndex = 29;
@@ -240,6 +246,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Bauhaus 93", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(454, 3);
             this.label8.Name = "label8";
@@ -250,11 +257,12 @@
             // buttonCrearNota
             // 
             this.buttonCrearNota.BackColor = System.Drawing.Color.Black;
+            this.buttonCrearNota.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonCrearNota.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCrearNota.ForeColor = System.Drawing.Color.White;
-            this.buttonCrearNota.Location = new System.Drawing.Point(437, 209);
+            this.buttonCrearNota.Location = new System.Drawing.Point(501, 209);
             this.buttonCrearNota.Name = "buttonCrearNota";
-            this.buttonCrearNota.Size = new System.Drawing.Size(69, 32);
+            this.buttonCrearNota.Size = new System.Drawing.Size(81, 36);
             this.buttonCrearNota.TabIndex = 31;
             this.buttonCrearNota.Text = "Guardar";
             this.buttonCrearNota.UseVisualStyleBackColor = false;
@@ -263,7 +271,8 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(437, 76);
+            this.label2.BackColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(437, 77);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(35, 13);
             this.label2.TabIndex = 33;
@@ -306,6 +315,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.RoyalBlue;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(900, 515);
             this.Controls.Add(this.dataGridViewNotas);
             this.Controls.Add(this.comboBoxAutor);

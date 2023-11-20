@@ -18,6 +18,7 @@ namespace misdekfinal
             ConfigurarDataGridView();
         }
 
+
         private void ConfigurarDataGridView()
         {
             // Configurar las columnas del DataGridView
@@ -25,6 +26,7 @@ namespace misdekfinal
             dataGridViewTareas.ReadOnly = true;
             dataGridViewTareas.AllowUserToAddRows = false;
 
+            // Aca agregamos nuevas columnas para eliminar y actualizar, su logica la manejaremos mas abajo
             DataGridViewButtonColumn eliminarColumn = new DataGridViewButtonColumn();
             eliminarColumn.HeaderText = "Eliminar";
             eliminarColumn.Text = "Eliminar";
@@ -39,6 +41,7 @@ namespace misdekfinal
         }
 
         
+       // Cuando cargue la secciion, llenamos los usuarios en el comboBox y ponemos los registros de dataGrid
         private void Tareas_Load(object sender, EventArgs e)
         {
             ActualizarDataGridView();
@@ -46,6 +49,7 @@ namespace misdekfinal
             LlenarComboBoxUsuarios(); // Llenar el ComboBox al cargar el formulario
 
         }
+
 
         private void textBoxAutor_TextChanged(object sender, EventArgs e)
         {
@@ -64,17 +68,21 @@ namespace misdekfinal
 
         private void dataGridViewTareas_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            // Si le da click a la columna de eliminar, obtenemos el id del que le dio click y traem la funcion ElimnarTarea de la clase usuarios
             if (e.RowIndex >= 0 && dataGridViewTareas.Columns[e.ColumnIndex] is DataGridViewButtonColumn && dataGridViewTareas.Columns[e.ColumnIndex].HeaderText.Equals("Eliminar"))
             {
                 int idTarea = Convert.ToInt32(dataGridViewTareas.Rows[e.RowIndex].Cells["id_tarea"].Value);
 
+
+           
                 // Lógica para eliminar la tarea con el ID obtenido
-                usuarios.EliminarTarea(idTarea); // Reemplaza esto con tu lógica de eliminación
+                usuarios.EliminarTarea(idTarea); 
 
                 MessageBox.Show("Tarea eliminada correctamente");
 
                 ActualizarDataGridView();
             }
+            // Si le da click a la columna de editar, obtenemos el id del que le dio click y traem la funcion eDITAR de la clase usuarios
             if (e.RowIndex >= 0 && dataGridViewTareas.Columns[e.ColumnIndex] is DataGridViewButtonColumn && dataGridViewTareas.Columns[e.ColumnIndex].HeaderText.Equals("Editar"))
             {
                 int idTarea = Convert.ToInt32(dataGridViewTareas.Rows[e.RowIndex].Cells["id_tarea"].Value);
@@ -179,6 +187,11 @@ namespace misdekfinal
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             // Manejar la selección cambiada
+        }
+
+        private void labelTarea_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

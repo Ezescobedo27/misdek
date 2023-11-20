@@ -51,6 +51,8 @@ namespace misdekfinal
             this.Close(); // Cerrar el formulario actual
         }
 
+
+        // En cuanto cargue, actualizamos el daraGrid, llenamos las secciones y los usuarios que pueden crear registros
         private void Notas_Load(object sender, EventArgs e)
 
         {
@@ -69,6 +71,7 @@ namespace misdekfinal
             dataGridViewNotas.ReadOnly = true;
             dataGridViewNotas.AllowUserToAddRows = false;
 
+            // Aca agregamos nuevas columnas para eliminar y actualizar, su logica la manejaremos mas abajo
             DataGridViewButtonColumn eliminarColumn = new DataGridViewButtonColumn();
             eliminarColumn.HeaderText = "Eliminar";
             eliminarColumn.Text = "Eliminar";
@@ -92,6 +95,7 @@ namespace misdekfinal
         }
 
      
+        // Aca creamos las secciones locales para el comboBox
         private void LlenarComboBoxSeccionesLocal()
         {
             List<string> nombresSecciones = new List<string>
@@ -119,17 +123,20 @@ namespace misdekfinal
         }
         private void dataGridViewNotas_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            // Aca agregamos nuevas columnas para eliminar y actualizar, su logica la manejaremos mas abajo
+
             if (e.RowIndex >= 0 && dataGridViewNotas.Columns[e.ColumnIndex] is DataGridViewButtonColumn && dataGridViewNotas.Columns[e.ColumnIndex].HeaderText.Equals("Eliminar"))
             {
                 int idNota = Convert.ToInt32(dataGridViewNotas.Rows[e.RowIndex].Cells["id_nota"].Value);
 
                 // Lógica para eliminar la tarea con el ID obtenido
-                usuarios.EliminarTareaNotas(idNota); // Reemplaza esto con tu lógica de eliminación
+                usuarios.EliminarTareaNotas(idNota);
 
                 MessageBox.Show("Tarea eliminada correctamente");
 
                 ActualizarDataGridView();
             }
+            // Si elige editar, con una tupla y la clase obtenemos detalles 
             if (e.RowIndex >= 0 && dataGridViewNotas.Columns[e.ColumnIndex] is DataGridViewButtonColumn && dataGridViewNotas.Columns[e.ColumnIndex].HeaderText.Equals("Editar"))
             {
                 int idNota = Convert.ToInt32(dataGridViewNotas.Rows[e.RowIndex].Cells["id_nota"].Value);
@@ -147,6 +154,7 @@ namespace misdekfinal
 
                     MessageBox.Show("ID:" + idNota + " Seleccionado, Modifica los Campos de tu registro");
                 }
+                // Por si no encuentra
                 else
                 {
                     MessageBox.Show("No se encontraron detalles para la nota seleccionada.");
@@ -157,6 +165,7 @@ namespace misdekfinal
 
         private void buttonCrearNota_Click(object sender, EventArgs e)
         {
+            // Si esta editando tarea, usamos la clase de editar con los datos ya rellenados para nomas modificar
             
             if (editandoTarea)
             {
@@ -181,6 +190,7 @@ namespace misdekfinal
 
             } else
             {
+                // Si no la esta editando, nomas creamos una tarea nueva
                 string nombreAutor = comboBoxAutor.SelectedItem.ToString();
                 string nombreTarea = textBoxNombre.Text;
                 string descripcionTarea = richTextBox1.Text;
@@ -205,12 +215,17 @@ namespace misdekfinal
 
         }
 
+
+        // Aca estaremos actualizando el dataGrid para ver los nuevos registros
         private void ActualizarDataGridView()
         {
             usuarios.ActualizarDataGridViewNotas(dataGridViewNotas);
 
         }
 
-        
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

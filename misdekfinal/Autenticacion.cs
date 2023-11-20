@@ -104,6 +104,25 @@ namespace misdekfinal
         {
             this.Close();
         }
-      
+
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+            if (inputContrasena.UseSystemPasswordChar == true)
+            {
+                // Mostrar la contraseña
+                inputContrasena.UseSystemPasswordChar = false;   
+             }
+            else
+            {
+                // Ocultar la contraseña
+                inputContrasena.UseSystemPasswordChar = true;
+
+            }
+        }
+
+        private void inputContrasena_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

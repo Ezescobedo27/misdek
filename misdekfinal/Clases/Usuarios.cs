@@ -3,10 +3,12 @@ using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 
+// Aca vamos a crear todas las funciones de la logica con la base de datos
 namespace misdekfinal.Clases
 {
     internal class Usuarios
     {
+        // Credenciales para conectarnos a nuestra base de datos
         NpgsqlConnection conex = new NpgsqlConnection();
         string bandera = "no";
         static String servidor = "ep-raspy-firefly-54852420-pooler.us-east-1.postgres.vercel-storage.com";
@@ -14,8 +16,11 @@ namespace misdekfinal.Clases
         static String usuario = "default";
         static String password = "qaPTRoJ21GrQ";
         static String puerto = "5432";
-                private Usuario usuarioAutenticado; 
+               
+        private Usuario usuarioAutenticado;
 
+
+        // Creamos estas clases para despues mostrarlas en la parte que dice perfil
         public class Usuario
         {
 
@@ -29,14 +34,16 @@ namespace misdekfinal.Clases
 
         }
 
-
+        // Unimos la cadena de conexion
         String cadenaConexion = "Server=" + servidor + ";Port=" + puerto + ";User Id=" + usuario + ";Password=" + password + ";Database=" + bd + ";";
 
 
+        // Creamos una tupla para poder obtener los detalles de la tarea a travez del id, esto nos sirve para cuando queramos editar
         public Tuple<string, string, string> ObtenerDetallesTarea(int idTarea)
         {
             Tuple<string, string, string> detallesTarea = null;
-
+            
+            // Nos conectamos a la base de datos, obtenemos los datos, ejecutamos el query y vamos a returnas los datos del otro lado
             try
             {
                 conex.ConnectionString = cadenaConexion;
@@ -61,6 +68,7 @@ namespace misdekfinal.Clases
                     }
                 }
             }
+            // Por si hay errores
             catch (NpgsqlException ex)
             {
                 MessageBox.Show("Error al obtener los detalles de la tarea: " + ex.Message);
@@ -73,10 +81,12 @@ namespace misdekfinal.Clases
             return detallesTarea;
         }
 
+        // Creamos una tupla para poder obtener los detalles de la nota a travez del id, esto nos sirve para cuando queramos editar
 
         public Tuple<string, string, string, string> ObtenerDetallesNotas(int idNota)
         {
             Tuple<string, string, string, string> detallesNota = null;
+            // Nos conectamos a la base de datos, obtenemos los datos, ejecutamos el query y vamos a returnar los datos del otro lado
 
             try
             {
@@ -103,6 +113,8 @@ namespace misdekfinal.Clases
                     }
                 }
             }
+            // Por si hay errores
+
             catch (NpgsqlException ex)
             {
                 MessageBox.Show("Error al obtener los detalles de la nota: " + ex.Message);
@@ -116,6 +128,7 @@ namespace misdekfinal.Clases
         }
 
 
+        // Este nos va a servir para que cuando haya un cambio vamos a actualizar el dataGrid con los nuevos registros de las Tareas
         public void ActualizarDataGridView(DataGridView dataGridView)
         {
             try
@@ -123,7 +136,7 @@ namespace misdekfinal.Clases
                 conex.ConnectionString = cadenaConexion;
                 conex.Open();
 
-                // Consulta SQL para obtener todas las tareas
+                // Consulta de SQL para obtener todas las tareas
                 string sql = "SELECT id_tarea, autor, nombre, descripcion FROM tareas";
 
                 using (NpgsqlCommand cmd = new NpgsqlCommand(sql, conex))
@@ -138,6 +151,7 @@ namespace misdekfinal.Clases
                     }
                 }
             }
+            // Por si hay errores
             catch (NpgsqlException ex)
             {
                 MessageBox.Show("Error al obtener las tareas: " + ex.Message);
@@ -148,6 +162,7 @@ namespace misdekfinal.Clases
             }
         }
 
+        // Esta parte nos va a servir para que cuando le de click a un registro en el dataGrid, eliminar una tarea del registro seleccionado
         public void EliminarTarea(int idTarea)
         {
             try
@@ -155,6 +170,7 @@ namespace misdekfinal.Clases
                 conex.ConnectionString = cadenaConexion;
                 conex.Open();
 
+                // Aca el query de eliminar y lo ejecutamos
                 string sql = "DELETE FROM tareas WHERE id_tarea = @idTarea";
 
                 using (NpgsqlCommand cmd = new NpgsqlCommand(sql, conex))
@@ -163,21 +179,29 @@ namespace misdekfinal.Clases
                     cmd.ExecuteNonQuery();
                 }
             }
+            // Por si hay errores
+
             catch (NpgsqlException ex)
             {
                 MessageBox.Show("Error al eliminar la tarea: " + ex.Message);
             }
             finally
             {
+                // cerramos conexion
                 conex.Close();
             }
         }
 
+        // Esta parte nos va a servir para que cuando le de click a un registro en el dataGrid, eliminar una nota del registro seleccionado
 
         public void EliminarTareaNotas(int idNota)
         {
             try
+
             {
+
+                // Aca el query de eliminar y lo ejecutamos
+
                 conex.ConnectionString = cadenaConexion;
                 conex.Open();
 
@@ -189,20 +213,25 @@ namespace misdekfinal.Clases
                     cmd.ExecuteNonQuery();
                 }
             }
+            // Por si hay errores
+
             catch (NpgsqlException ex)
             {
                 MessageBox.Show("Error al eliminar la nota: " + ex.Message);
             }
             finally
             {
+                // cerramos conexion
                 conex.Close();
             }
         }
 
+        // Este nos va a servir para que cuando haya un cambio vamos a actualizar el dataGrid con los nuevos registros de las Notas
         public void ActualizarDataGridViewNotas(DataGridView dataGridView)
         {
             try
             {
+                // Consulta de SQL para obtener todas las notas
                 conex.ConnectionString = cadenaConexion;
                 conex.Open();
 
@@ -223,10 +252,13 @@ namespace misdekfinal.Clases
             }
             catch (NpgsqlException ex)
             {
+                // Por si hay errores
                 MessageBox.Show("Error al obtener las tareas: " + ex.Message);
             }
             finally
             {
+                // cerramos conexion
+
                 conex.Close();
             }
         }
@@ -248,6 +280,7 @@ namespace misdekfinal.Clases
         }
 
 
+        // Aca obtenemos todos los usuarios para cuando seleccione lo de quien creo la nota o tarea
         public List<string> ObtenerNombresUsuarios()
         {
             List<string> nombresUsuarios = new List<string>();
@@ -284,6 +317,8 @@ namespace misdekfinal.Clases
         }
 
 
+
+        // Aca nos va a servir para que en las notas podamos obtener el catalogo de las secciones
         public List<string> ObtenerNombresSecciones()
         {
             List<string> nombresSecciones = new List<string>();
@@ -319,6 +354,8 @@ namespace misdekfinal.Clases
             return nombresSecciones;
         }
 
+
+        // Aca contenemos toda la logica para poder actualizar una tarea a travez del id y los nuevos datos
         public void ActualizarTarea(int idTarea, string nombreAutor, string nombreTarea, string descripcionTarea)
         {
             try
@@ -351,6 +388,8 @@ namespace misdekfinal.Clases
         }
 
 
+
+        // Aca tenemos la logica para crear una tarea con los datos, el id se crea solo en la base de datos
         public void CrearTarea(string nombreAutor, string nombreTarea, string descripcionTarea)
         {
             try
@@ -378,6 +417,9 @@ namespace misdekfinal.Clases
                 conex.Close();
             }
         }
+
+
+        // Aca contenemos toda la logica para poder actualizar una nota a travez del id y los nuevos datos
 
         public void ActualizarNota(int idNota, string nombreAutor, string nombreNota, string descripcionNota, string seccionNota)
         {
@@ -411,6 +453,7 @@ namespace misdekfinal.Clases
             }
         }
 
+        // Aca tenemos la logica para crear una nota con los datos, el id se crea solo en la base de datos
         public void CrearNota(string nombreAutor, string nombreTarea, string descripcionTarea, string seccion)
         {
             try
@@ -442,6 +485,7 @@ namespace misdekfinal.Clases
 
 
 
+        // Con esta  funcion validamos que el correo y contraseñe que ingrese el usuario al principio, sean validos, si no es valido pues no lo dejamos pasar
         public bool ValidarCredenciales(string correo, string contrasena)
         {
             try
@@ -483,11 +527,14 @@ namespace misdekfinal.Clases
 
 
 
+        // Funcion simple para retornar al usuario autenticado
         public Usuario ObtenerUsuarioAutenticado()
         {
             return usuarioAutenticado;
         }
 
+
+        // Aca para la seccion de perfil obtenemos todos los datos de un usuario, si hay algun error de conexion dejamos un usuario por defecto
         public Usuario ObtenerInformacionUsuario(string correo)
         {
 

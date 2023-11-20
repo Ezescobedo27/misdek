@@ -41,11 +41,11 @@
             this.labelError = new System.Windows.Forms.Label();
             this.labelExitoso = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.iconButton1 = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -70,9 +70,10 @@
             this.inputContrasena.ForeColor = System.Drawing.Color.Black;
             this.inputContrasena.Location = new System.Drawing.Point(49, 273);
             this.inputContrasena.Name = "inputContrasena";
-            this.inputContrasena.Size = new System.Drawing.Size(250, 22);
+            this.inputContrasena.Size = new System.Drawing.Size(233, 22);
             this.inputContrasena.TabIndex = 3;
             this.inputContrasena.UseSystemPasswordChar = true;
+            this.inputContrasena.TextChanged += new System.EventHandler(this.inputContrasena_TextChanged);
             // 
             // btnLogin
             // 
@@ -176,17 +177,6 @@
             // 
             this.timer1.Interval = 5000;
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(310, 131);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(137, 40);
-            this.label4.TabIndex = 13;
-            this.label4.Text = "Credenciales para\r\nIniciar Sesión";
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -231,6 +221,20 @@
             this.label8.TabIndex = 17;
             this.label8.Text = "contraseña";
             // 
+            // iconButton1
+            // 
+            this.iconButton1.BackColor = System.Drawing.Color.Transparent;
+            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Eye;
+            this.iconButton1.IconColor = System.Drawing.Color.Black;
+            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton1.IconSize = 25;
+            this.iconButton1.Location = new System.Drawing.Point(281, 273);
+            this.iconButton1.Name = "iconButton1";
+            this.iconButton1.Size = new System.Drawing.Size(25, 23);
+            this.iconButton1.TabIndex = 18;
+            this.iconButton1.UseVisualStyleBackColor = false;
+            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
+            // 
             // Autenticacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -239,11 +243,11 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(471, 379);
+            this.Controls.Add(this.iconButton1);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.labelExitoso);
             this.Controls.Add(this.labelError);
             this.Controls.Add(this.linkLabel1);
@@ -277,11 +281,11 @@
         private System.Windows.Forms.Label labelError;
         private System.Windows.Forms.Label labelExitoso;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
+        private FontAwesome.Sharp.IconButton iconButton1;
     }
 }
 
